@@ -19,7 +19,8 @@ So I had implemented the application to take user input for all the questions.
  So the application collects the answers with corresponding question and return the output. For a console survey 
  the output is printed as below, with Question Id, Question, Answer format and Answer 
  (question 3 is skipped based on previous answer):
- ```Results:
+ ``` 
+ Results:
  (1) What's your name? <Free Text> Answer: 'username'
  (2) How old are you? <Free Text> Answer: '23'
  (4) Do you have a driving license? <Boolean> Answer: 'false'

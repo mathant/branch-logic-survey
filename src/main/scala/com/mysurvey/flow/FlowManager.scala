@@ -3,6 +3,7 @@ package com.mysurvey.flow
 import com.mysurvey.domain._
 import com.mysurvey.io.{Printer, Scanner}
 
+import scala.annotation.tailrec
 import scala.util.{Failure, Success, Try}
 
 
@@ -25,7 +26,8 @@ trait FlowManager extends Printer with Scanner {
     */
   //add the latest survey block (QuestionAnswerBlock) with answer to the head of the list (for efficiency),
   // reverse the list before sending back.
-  def runSurvey(surveyBlock: SurveyBlock, prevAnswersMap: Map[QuestionId, Answer],
+  @tailrec
+  final def runSurvey(surveyBlock: SurveyBlock, prevAnswersMap: Map[QuestionId, Answer],
                 prevResults: List[QuestionAnswer]): Try[List[QuestionAnswer]] = {
 
     surveyBlock match {
